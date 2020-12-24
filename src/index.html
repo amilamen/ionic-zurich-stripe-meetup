@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, viewport-fit=cover"
+    />
+
+    <base href="/" />
+
+    <title>Ionic Zurich Meetup</title>
+
+    <meta property="og:site_name" content="IonicZurichStripe" />
+    <meta property="og:title" content="IonicZurichStripe" />
+
+    <meta
+      name="author"
+      content="Talk about @ionic/angular package for Stripe"
+    />
+
+    <meta
+      name="description"
+      content="Talk about @ionic/angular package for Stripe"
+    />
+
+    <meta
+      property="og:description"
+      content="Talk about @ionic/angular package for Stripe"
+    />
+    <meta property="og:site_name" content="IonicZurichStripe" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://deckdeckgo.com" />
+    <meta
+      property="og:image"
+      content="https://deckdeckgo.com/assets/img/deckdeckgo.png"
+    />
+    <meta property="og:image:type" content="image/png" />
+
+    <meta name="twitter:site" content="@deckdeckgo" />
+    <meta name="twitter:title" content="IonicZurichStripe" />
+    <meta
+      name="twitter:description"
+      content="Talk about @ionic/angular package for Stripe"
+    />
+    <meta
+      name="twitter:image:src"
+      content="https://deckdeckgo.com/assets/img/deckdeckgo.png"
+    />
+    <meta name="twitter:card" content="summary" />
+
+    <!-- Favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicon/favicon-16x16.png"
+    />
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#3880ff" />
+    <meta
+      name="msapplication-config"
+      content="assets/favicon/browserconfig.xml"
+    />
+    <meta name="theme-color" content="#3880ff" />
+
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", async () => {
+          try {
+            const reg = await navigator.serviceWorker.register(
+              "service-worker.js"
+            );
+            reg.onupdatefound = () => {
+              const installingWorker = reg.installing;
+              installingWorker.onstatechange = () => {
+                if (installingWorker.state === "installed") {
+                  window.dispatchEvent(new Event("swUpdate"));
+                }
+              };
+            };
+          } catch (e) {
+            console.warn("No service worker registered");
+          }
+        });
+      }
+    </script>
+
+    <link rel="manifest" href="manifest.json" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="msapplication-tap-highlight" content="no" />
+
+    <style>
+      :root {
+        background: #ffffff;
+        --ion-background-color: #ffffff;
+      }
+
+      deckgo-deck {
+        color: black;
+        --color: black;
+        --ion-text-color: black;
+      }
+
+      /* Until Web Components are loaded, don't display content */
+      body {
+        background: #ffffff;
+      }
+
+      ion-app.loading,
+      ion-app.loading a {
+        color: transparent;
+      }
+
+      ion-app.loading a {
+        color: transparent;
+      }
+
+      ion-app.loading {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <ion-app class="loading">
+      <ion-menu
+        id="ion-menu"
+        side="start"
+        type="overlay"
+        swipeGesture="false"
+        content-id="main"
+      >
+        <ion-content>
+          <deckgo-chapters></deckgo-chapters>
+        </ion-content>
+      </ion-menu>
+
+      <div class="ion-page" id="main">
+        <ion-header>
+          <ion-toolbar color="dark">
+            <ion-buttons slot="start">
+              <ion-menu-button></ion-menu-button>
+            </ion-buttons>
+            <ion-title>Ionic Zurich Meetup</ion-title>
+            <ion-buttons slot="end">
+              <ion-button id="deckMenu"
+                ><ion-icon
+                  ios="ellipsis-horizontal"
+                  md="ellipsis-vertical"
+                ></ion-icon
+              ></ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+
+        <ion-content
+          force-overscroll="false"
+          style="position: relative; --overflow: hidden"
+        >
+          <deckgo-deck id="slider" embedded="true">
+            <deckgo-slide-content>
+              <h1 slot="title">Home</h1>
+              <img
+                src="./assets/img/stripe.png"
+                slot="content"
+                alt="Stripe image"
+                srcset=""
+                class="image__stripe"
+              />
+              <img
+                src="./assets/img/logoVy.png"
+                slot="content"
+                alt="Logo Vyconsulting image"
+                srcset=""
+                class="image__vyconsulting"
+              />
+
+              <h1
+                slot="content"
+                class="ion-text-center h1__title-talk"
+                color="primary"
+              >
+                @ionic/angular package for Stripe
+              </h1>
+
+              <img
+                src="./assets/img/angular.png"
+                slot="content"
+                alt="Stripe image"
+                srcset=""
+                class="image__angular"
+              />
+              <img
+                src="./assets/img/ionic.png"
+                slot="content"
+                alt="Stripe image"
+                srcset=""
+                class="image__ionic"
+              />
+            </deckgo-slide-content>
+
+            <deckgo-slide-split>
+              <h1 slot="title">About me</h1>
+              <div slot="start">
+                <h2 class="h2__whoami">Who am I ?</h2>
+                <h3 class="h3__fullname">Ezéchiel Amen AGBLA</h3>
+                <h3 class="h3__post h3__first">
+                  ✅ Electronics and Embedded Systems Engineer
+                </h3>
+                <h3 class="h3__post">
+                  ✅ Chief Operations Officer and Fullstack JavaScript Developer
+                  at <span>Vyconsulting</span>
+                </h3>
+                <h3 class="h3__post">
+                  ✅ Teacher at <span>Private University of Fez (Morocco)</span>
+                </h3>
+              </div>
+
+              <div slot="end">
+                <img class="img__user" src="./assets/img/avatar.jpeg" />
+                <h3 class="h3__twitter">twitter.com/ezchilamen</h3>
+                <h3 class="h3__github">github.com/amilamen</h3>
+              </div>
+            </deckgo-slide-split>
+
+            <deckgo-slide-content class="slide__vyconsulting">
+              <h1 slot="title">Vyconsulting</h1>
+              <div slot="content">
+                <img src="./assets/img/logoVy2.png" alt="" srcset="" />
+                <h1 class="h1__title-vyconsulting ion-text-center">
+                  Vyconsulting
+                </h1>
+              </div>
+            </deckgo-slide-content>
+
+            <deckgo-slide-content>
+              <h1 slot="title">What is Vyconsulting</h1>
+              <div slot="content">
+                <h2 class="h2__whoami">What is Vyconsulting ?</h2>
+                <h3 class="h3__post" style="margin-top: -2%">
+                  Vyconsulting is a company which develops digital solutions
+                  with representation in France and Africa.
+                </h3>
+                <h3 class="h3__post" style="margin-top: -2%; line-height: 60px">
+                  Our main stacks are: <br />&nbsp;&nbsp;&nbsp;&nbsp; ✅
+                  Angular, Vue & Ionic <br />&nbsp;&nbsp;&nbsp;&nbsp; ✅ Laravel
+                  & Nestjs
+                </h3>
+              </div>
+            </deckgo-slide-content>
+
+            <deckgo-slide-content class="slide__vyconsulting">
+              <h1 slot="title">Stripe</h1>
+              <div slot="content">
+                <img src="./assets/img/stripe2.png" alt="" srcset="" />
+                <h1 class="h1__title-vyconsulting ion-text-center">Stripe</h1>
+              </div>
+            </deckgo-slide-content>
+
+            <deckgo-slide-content>
+              <h1 slot="title">What is Stripe ?</h1>
+              <div slot="content">
+                <h2 class="h2__whoami">What is Stripe ?</h2>
+                <h3 class="h3__post" style="margin-top: -2%">
+                  ✅ Payments infrastructure for the internet
+                </h3>
+                <h3 class="h3__post" style="margin-top: -2%">
+                  ✅ Allow checkout payment, subscription payment using credit card
+                  or bank account
+                </h3>
+              </div>
+            </deckgo-slide-content>
+
+            <deckgo-slide-content class="slide__vyconsulting">
+              <h1 slot="title">Ionic Framework</h1>
+              <div slot="content">
+                <img src="./assets/img/ionic2.png" alt="" srcset="" />
+                <h1 class="h1__title-vyconsulting ion-text-center">
+                  Ionic Framework
+                </h1>
+              </div>
+            </deckgo-slide-content>
+
+            <deckgo-slide-content>
+              <h1 slot="title">What is Ionic ?</h1>
+              <div slot="content">
+                <h2 class="h2__whoami">What is it ?</h2>
+                <h3 class="h3__post" style="margin-top: -2%">
+                  ✅ UI Components for native mobile apps, PWAs, and even
+                  Desktop
+                </h3>
+                <h3 class="h3__post" style="margin-top: -2%">
+                  ✅ Pre-built Gestures and Animations
+                </h3>
+                <h3 class="h3__post" style="margin-top: -2%">
+                  ✅ Platform Continuity for iOS and Material Design
+                </h3>
+                <h3 class="h3__post" style="margin-top: -2%">
+                  ✅ Full access to all Native APIs and Plugins
+                </h3>
+                <h3 class="h3__post" style="margin-top: -2%">
+                  ✅ A large, vibrant world-wide community
+                </h3>
+              </div>
+            </deckgo-slide-content>
+
+            <deckgo-slide-content>
+              <h1 slot="title">What is Ionic ?</h1>
+              <div slot="content">
+                <h2 class="h2__whoami">What is it ?</h2>
+                <h3 class="h3__post" style="margin-top: -2%">
+                  ✅ Framework/components are open source (MIT)
+                </h3>
+                <h3 class="h3__post" style="margin-top: -2%">
+                  ✅ Native layers (Cordova/Capacitor) also open source
+                </h3>
+                <h3 class="h3__post" style="margin-top: -2%">
+                  ✅ Open Web Standards - available to everyone
+                </h3>
+              </div>
+            </deckgo-slide-content>
+
+            <deckgo-slide-content>
+              <h1 slot="title">What is Ionic ?</h1>
+              <div
+                slot="content"
+                style="display: block; margin: 0 auto; width: 80%"
+              >
+                <h2 class="h2__whoami" style="left: 5%">What is it ?</h2>
+                <ion-grid fixed>
+                  <ion-row style="display: block; margin: 0 auto; width: 90%">
+                    <ion-col size="12" style="display: block; margin: 0 auto">
+                      <img
+                        style="display: block; margin: 0 auto; width: 90%"
+                        src="./assets/img/ionic_ui.png"
+                        alt=""
+                      />
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </div>
+            </deckgo-slide-content>
+
+            <deckgo-slide-content>
+              <h1 slot="title">How it works ?</h1>
+              <div
+                slot="content"
+                style="display: block; margin: 8% auto; width: 100%"
+              >
+                <h2 class="h2__whoami" style="left: 5%">How it works ?</h2>
+                <ion-grid fixed>
+                  <ion-row style="display: block; margin: 0 auto; width: 100%">
+                    <ion-col size="12" style="display: block; margin: 0 auto">
+                      <img
+                        style="display: block; margin: 0 auto; width: 100%"
+                        src="./assets/img/ionic_framework_ecosystem.png"
+                        alt=""
+                      />
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </div>
+            </deckgo-slide-content>
+
+            <deckgo-slide-split>
+              <h1 slot="title">How it works ?</h1>
+              <div slot="start">
+                <h2 class="h2__whoami">How it works ?</h2>
+                <h3 class="h3__post h3__first" style="margin-top: -36%">
+                  ✅ Community driven plugin ecosystem
+                </h3>
+                <h3 class="h3__post">✅ Cordova</h3>
+                <h3 class="h3__post">✅ Capacitor</h3>
+              </div>
+
+              <div slot="end">
+                <img class="img__user" src="./assets/img/native.png" />
+              </div>
+            </deckgo-slide-split>
+
+            <deckgo-slide-content>
+              <h1 slot="title">Ionic and Stripe, what’s connection ?</h1>
+              <div slot="content">
+                <h2 class="h2__whoami">
+                  Ionic and Stripe, what’s connection ?
+                </h2>
+                <h3 class="h3__post" style="margin-top: -2%">
+                  ✅ Many Ionic apps are built in e-commerce
+                </h3>
+                <h3 class="h3__post" style="margin-top: -2%">
+                  ✅ Use Stripe in your Ionic app to allow secure payments
+                </h3>
+              </div>
+            </deckgo-slide-content>
+
+            <deckgo-slide-content class="slide__vyconsulting">
+              <h1 slot="title">Stripe</h1>
+              <div slot="content">
+                <ion-grid fixed>
+                  <ion-row>
+                    <ion-col size="6" class="text-left">
+                      <img
+                        src="./assets/img/ionic2.png"
+                        style="width: 150px; float: left"
+                        alt=""
+                        srcset=""
+                      />
+                    </ion-col>
+                    <ion-col size="6" class="text-right">
+                      <img
+                        src="./assets/img/stripe2.png"
+                        style="width: 220px; float: right"
+                        alt=""
+                        srcset=""
+                      />
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+                <h1 class="h1__title-vyconsulting ion-text-center">
+                  Integration of Stripe in Ionic (before our package)
+                </h1>
+              </div>
+            </deckgo-slide-content>
+
+            <deckgo-slide-content>
+              <h1 slot="title">1st method</h1>
+              <div slot="content">
+                <h2 class="h2__whoami">1st method</h2>
+                <h3 class="h3__post" style="margin-top: -2%">Use Cordova</h3>
+                <deckgo-highlight-code
+                  class="ion-padding"
+                  style="width: -webkit-fill-available; margin-top: -4%; margin-left: 16px;"
+                  terminal="carbon"
+                  language="javascript"
+                >
+                  <code slot="code">
+                  $ ionic cordova plugin add cordova-plugin-stripe
+
+$ npm install @ionic-native/stripe
+                  </code>
+                </deckgo-highlight-code>
+                <ion-grid fixed style="margin-top: 4%">
+                  <ion-row style="display: block; margin: 0 auto; width: 84%">
+                    <ion-col size="12" style="display: block; margin: 0 auto">
+                      <img
+                        style="display: block; margin: 0 auto; width: 90%"
+                        src="./assets/img/stripe_cordova_api.png"
+                        alt=""
+                      />
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </div>
+            </deckgo-slide-content>
+
+            <deckgo-slide-content>
+              <h1 slot="title">2nd method</h1>
+              <div slot="content">
+                <h2 class="h2__whoami">2nd method</h2>
+                <h3 class="h3__post" style="margin-top: -2%">
+                  ✅ Use
+                  <span style="font-weight: bold; color: var(--ion-color-dark)"
+                    >Stripe SDK JS</span
+                  >
+                </h3>
+                <h3 class="h3__post" style="margin-top: -2%">
+                  <span style="font-weight: bold; color: var(--ion-color-dark)"
+                    >✅ Hard integration</span
+                  >
+                  for many developers
+                </h3>
+                <h3 class="h3__post" style="margin-top: -2%">
+                  <span style="font-weight: bold; color: var(--ion-color-dark)"
+                    >✅ Need solid knowledges in JS</span
+                  >
+                  (DOM manipulation)
+                </h3>
+              </div>
+            </deckgo-slide-content>
+
+            <deckgo-slide-content>
+              <h1 slot="title">3nd method</h1>
+              <div slot="content">
+                <h2 class="h2__whoami">3nd method</h2>
+                <h3 class="h3__post" style="margin-top: -2%">
+                  ✅ Use
+                  <span style="font-weight: bold; color: var(--ion-color-dark)"
+                    >ngx-stripe</span
+                  >package on NPM
+                </h3>
+                <h3 class="h3__post" style="margin-top: -2%">
+                  <span style="font-weight: bold; color: var(--ion-color-dark)"
+                    >✅ ngx-stripe</span
+                  >
+                  is a thin wrapper around Stripe Elements (Stripe SDK JS)
+                </h3>
+                <h3 class="h3__post" style="margin-top: -2%">
+                  ✅ Allows the use of almost all features
+                </h3>
+              </div>
+            </deckgo-slide-content>
+
+            <deckgo-slide-content class="slide__vyconsulting">
+              <h1 slot="title">Stripe</h1>
+              <div slot="content">
+                <ion-grid fixed>
+                  <ion-row>
+                    <ion-col size="4" class="ion-text-center">
+                      <img
+                        src="./assets/img/ionic2.png"
+                        style="width: 150px"
+                        alt=""
+                        srcset=""
+                      />
+                    </ion-col>
+                    <ion-col size="4" class="ion-text-center">
+                      <img
+                        src="./assets/img/logoVy2.png"
+                        style="width: 170px"
+                        alt=""
+                        srcset=""
+                      />
+                    </ion-col>
+                    <ion-col size="4" class="ion-text-center">
+                      <img
+                        src="./assets/img/stripe2.png"
+                        style="width: 220px"
+                        alt=""
+                        srcset=""
+                      />
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+                <h1
+                  class="h1__title-vyconsulting ion-text-center"
+                  style="font-weight: normal"
+                >
+                Integration of Stripe in Ionic with
+                  <span style="font-weight: bold; color: var(--ion-color-light)"
+                    >ionic-stripe-checkout</span
+                  >
+                </h1>
+              </div>
+            </deckgo-slide-content>
+
+            <deckgo-slide-content>
+              <h1 slot="title">What are motivations ?</h1>
+              <div slot="content">
+                <h2 class="h2__whoami">What are motivations ?</h2>
+                <h3 class="h3__post" style="margin-top: -2%">
+                  ✅ We often use Stripe for our customers projects at
+                  Vyconsulting
+                </h3>
+                <h3 class="h3__post" style="margin-top: -2%">
+                  ✅ Cordova plugin Stripe doesn’t have an UI for payment and
+                  APIs are limited
+                </h3>
+                <h3 class="h3__post" style="margin-top: -2%">
+                  ✅ Use Ionic components to build Stripe forms for payment like
+                  Stripe SDK forms without native plugins
+                </h3>
+              </div>
+            </deckgo-slide-content>
+
+            <deckgo-slide-content>
+              <h1 slot="title">How it works ?</h1>
+              <div slot="content">
+                <h2 class="h2__whoami">How it works ?</h2>
+                <h3 class="h3__post" style="margin-top: -2%">
+                  Installation of package from NPM
+                </h3>
+                <deckgo-highlight-code
+                  class="ion-padding"
+                  style="width: -webkit-fill-available; margin-left: 16px;"
+                  terminal="carbon"
+                  language="javascript"
+                >
+                  <code slot="code">
+                    npm install --save @vyconsulting/ionic-stripe-checkout
+                  </code>
+                </deckgo-highlight-code>
+
+                <deckgo-highlight-code
+                  class="ion-padding"
+                  style="width: -webkit-fill-available; margin-left: 16px; margin-top: 10%;"
+                  terminal="carbon"
+                  language="javascript"
+                >
+                  <code slot="code">
+                    < ion-stripe-checkout
+                    [amount]="100"
+                    [currency]="'EUR'"
+                    (checkout)="onPay($event)"
+                    >
+                  </ ion-stripe-checkout>
+                  </code>
+                </deckgo-highlight-code>
+              </div>
+            </deckgo-slide-content>
+
+            <deckgo-slide-content>
+              <h1 slot="title">How it works ?</h1>
+              <div slot="content">
+                <h2 class="h2__whoami">How it works ?</h2>
+                <h3 class="h3__post" style="margin-top: -4%">
+                  Setup of development mode
+                </h3>
+                <ion-text
+                  class="ion-padding"
+                  style="margin-top: -4%; display: block"
+                  >Once installed you need to import our module firstly in
+                  <span style="font-weight: bold; color: var(--ion-color-dark)"
+                    >app.module.ts</span
+                  >
+                  :</ion-text
+                >
+                <deckgo-highlight-code terminal="carbon">
+                  <code slot="code">
+                    import { IonicStripeCheckoutModule } from '@vyconsulting/ionic-stripe-checkout';
+
+@NgModule({
+    ...
+    imports: [IonicStripeCheckoutModule.forRoot({
+    stripe_secret_key: "YOUR_STRIPE_SECRET_KEY",
+    }), ...],
+    ...
+})
+
+export class AppModule {
+}
+                  </code>
+                </deckgo-highlight-code>
+              </div>
+            </deckgo-slide-content>
+
+            <deckgo-slide-content>
+              <h1 slot="title">How it works ?</h1>
+              <div slot="content">
+                <h2 class="h2__whoami">How it works ?</h2>
+                <h3 class="h3__post" style="margin-top: -4%">
+                  Setup of development mode
+                </h3>
+                <ion-text
+                  class="ion-padding"
+                  style="margin-top: -4%; display: block"
+                  >After do this, in your page where you want to use this
+                  component, you will do this:</ion-text
+                >
+                <deckgo-highlight-code terminal="carbon">
+                  <code slot="code">
+import { IonicStripeCheckoutModule } from '@vyconsulting/ionic-stripe-checkout';
+
+@NgModule({
+    ...
+    imports: [IonicStripeCheckoutModule, ...],
+    ...
+})
+
+export class YourModule {
+}
+                  </code>
+                </deckgo-highlight-code>
+              </div>
+            </deckgo-slide-content>
+
+            <deckgo-slide-content>
+              <h1 slot="title">How it works ?</h1>
+              <div slot="content">
+                <h2 class="h2__whoami">How it works ?</h2>
+                <h3 class="h3__post" style="margin-top: -4%">
+                  Setup of production mode
+                </h3>
+                <ion-text
+                  class="ion-padding"
+                  style="margin-top: -4%; display: block"
+                  >Once installed you need to import our module firstly in
+                  <span style="font-weight: bold; color: var(--ion-color-dark)"
+                    >app.module.ts</span
+                  >
+                  :</ion-text
+                >
+                <deckgo-highlight-code terminal="carbon">
+                  <code slot="code">
+                    import { IonicStripeCheckoutModule } from '@vyconsulting/ionic-stripe-checkout';
+
+@NgModule({
+    ...
+    imports: [IonicStripeCheckoutModule.forRoot({
+    stripe_publishable_key: "YOUR_STRIPE_PUBLISHABLE_KEY",
+    url_create_payment: "http://YOUR_DOMAIN/YOUR_END_POINT_FOR_CREATE_PAYMENT",
+    url_token_card: "http://YOUR_DOMAIN/YOUR_END_POINT_FOR_CREATE_TOKEN",
+    }), ...],
+    ...
+})
+
+export class AppModule {
+}
+                  </code>
+                </deckgo-highlight-code>
+              </div>
+            </deckgo-slide-content>
+
+            <deckgo-slide-content>
+              <h1 slot="title">How it works ?</h1>
+              <div slot="content">
+                <h2 class="h2__whoami">How it works ?</h2>
+                <h3 class="h3__post" style="margin-top: -4%">
+                  Setup of production mode
+                </h3>
+                <ion-text
+                  class="ion-padding"
+                  style="margin-top: -4%; display: block"
+                  >After do this, in your page where you want to use this
+                  component, you will do this:</ion-text
+                >
+                <deckgo-highlight-code terminal="carbon">
+                  <code slot="code">
+                    import { IonicStripeCheckoutModule } from '@vyconsulting/ionic-stripe-checkout';
+
+@NgModule({
+    ...
+    imports: [IonicStripeCheckoutModule, ...],
+    ...
+})
+
+export class YourModule {
+}
+                  </code>
+                </deckgo-highlight-code>
+              </div>
+            </deckgo-slide-content>
+
+            <deckgo-slide-content>
+              <h1 slot="title">How it works ?</h1>
+              <div slot="content">
+                <h2 class="h2__whoami">How it works ?</h2>
+                <h3 class="h3__post" style="margin-top: -4%">
+                  Setup of production mode
+                </h3>
+                <ion-text
+                  class="ion-padding"
+                  style="margin-top: -4%; display: block"
+                  >Finally, you must use some APIs from your backend to
+                  complete.
+                  <span style="font-weight: bold; color: var(--ion-color-dark)"
+                    >Express.js example</span
+                  >
+                </ion-text>
+                <deckgo-highlight-code
+                  terminal="carbon"
+                  style="font-size: medium; font-weight: bold"
+                >
+                  <code slot="code">
+...
+app.post("/create-token", async (req, res) => {
+    const token = await stripe.tokens.create({
+        card: {
+        number: req.body.cardNumber,
+        exp_month: req.body.cardMonth,
+        exp_year: req.body.cardYear,
+        cvc: req.body.cardCVC,
+        },
+    });
+    res.json({ token });
+});
+
+app.post("/create-payment", async (request, response) => {
+    stripe.charges.create({
+        amount: request.body.amount,
+        currency: request.body.currency,
+        source: request.body.source,
+    })
+    .then((charge) => {
+        response.json({ charge });
+    })
+    .catch((error) => {
+        response.json({ error });
+    });
+});
+...
+                  </code>
+                </deckgo-highlight-code>
+              </div>
+            </deckgo-slide-content>
+
+            <deckgo-slide-content>
+              <h1 slot="title">How many use it ?</h1>
+              <div
+                slot="content"
+                style="display: block; margin: 0 auto; width: 80%"
+              >
+                <h2 class="h2__whoami" style="left: 5%">How many use it ?</h2>
+                <ion-grid fixed>
+                  <ion-row style="width: 90%">
+                    <ion-col size="6">
+                      <img
+                        style="display: block; margin: 0 auto; width: 90%"
+                        src="./assets/img/first_week_npm.png"
+                        alt=""
+                      />
+                    </ion-col>
+                    <ion-col size="6">
+                      <img
+                        style="display: block; margin: 0 auto; width: 90%"
+                        src="./assets/img/second_week_npm.png"
+                        alt=""
+                      />
+                    </ion-col>
+                  </ion-row>
+                  <ion-row
+                    style="
+                      display: block;
+                      margin: 5% auto;
+                      width: 90%;
+                      margin-left: 5px;
+                    "
+                  >
+                    <img
+                      style="display: block; margin: 0 auto"
+                      src="./assets/img/global_downloads.png"
+                      alt=""
+                    />
+                  </ion-row>
+                </ion-grid>
+              </div>
+            </deckgo-slide-content>
+
+            <deckgo-slide-content>
+              <h1 slot="title">What do they think about ?</h1>
+              <div slot="content">
+                <h2 class="h2__whoami">What do they think about ?</h2>
+                <ion-grid fixed style="margin-top: 0%">
+                  <ion-row style="width: 84%">
+                    <ion-col size="12">
+                      <img
+                        style="display: block; margin: 0 auto; width: 100%"
+                        src="./assets/img/mike_comment.png"
+                        alt=""
+                      />
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </div>
+            </deckgo-slide-content>
+
+            <deckgo-slide-content>
+              <h1 slot="title">What do they think about ?</h1>
+              <div slot="content">
+                <h2 class="h2__whoami">What do they think about ?</h2>
+                <ion-grid fixed style="margin-top: 0%">
+                  <ion-row style="width: 84%">
+                    <ion-col size="12">
+                      <img
+                        style="display: block; margin: 0 auto; width: 100%"
+                        src="./assets/img/max_comment.png"
+                        alt=""
+                      />
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </div>
+            </deckgo-slide-content>
+
+            <deckgo-slide-content>
+              <h1 slot="title">What do they think about ?</h1>
+              <div slot="content">
+                <h2 class="h2__whoami">What do they think about ?</h2>
+                <ion-grid fixed style="margin-top: 0%">
+                  <ion-row style="width: 84%">
+                    <ion-col size="12">
+                      <img
+                        style="display: block; margin: 0 auto; width: 2%; zoom: 20%; position: fixed;"
+                        src="./assets/img/cjavilla_comment.png"
+                        alt=""
+                      />
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </div>
+            </deckgo-slide-content>
+
+            <deckgo-slide-content>
+              <h1 slot="title">What do they think about ?</h1>
+              <div slot="content">
+                <h2 class="h2__whoami">What do they think about ?</h2>
+                <ion-grid fixed style="margin-top: 0%">
+                  <ion-row style="width: 84%">
+                    <ion-col size="12">
+                      <img
+                        style="display: block; margin: 0 auto; width: 100%"
+                        src="./assets/img/mike_will.png"
+                        alt=""
+                      />
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </div>
+            </deckgo-slide-content>
+
+            <deckgo-slide-content>
+              <h1 slot="title">What do they think about ?</h1>
+              <div slot="content">
+                <h2 class="h2__whoami">What do they think about ?</h2>
+                <ion-grid fixed style="margin-top: 0%">
+                  <ion-row style="width: 84%">
+                    <ion-col size="12">
+                      <img
+                        style="display: block; margin: 0 auto; width: 100%"
+                        src="./assets/img/panji.png"
+                        alt=""
+                      />
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </div>
+            </deckgo-slide-content>
+
+            <deckgo-slide-content>
+              <h1 slot="title">What do they think about ?</h1>
+              <div slot="content">
+                <h2 class="h2__whoami">What do they think about ?</h2>
+                <ion-grid fixed style="margin-top: 0%">
+                  <ion-row style="width: 84%">
+                    <ion-col size="12">
+                      <img
+                        style="width: 40%"
+                        src="./assets/img/muhammad_comment.png"
+                        alt=""
+                      />
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </div>
+            </deckgo-slide-content>
+
+            <deckgo-slide-content>
+              <h1 slot="title">What do they think about ?</h1>
+              <div slot="content">
+                <h2 class="h2__whoami">What do they think about ?</h2>
+                <ion-grid fixed style="margin-top: 0%">
+                  <ion-row style="width: 84%">
+                    <ion-col size="12">
+                      <img
+                        style="width: 40%"
+                        src="./assets/img/simon_cooment.png"
+                        alt=""
+                      />
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </div>
+            </deckgo-slide-content>
+
+            <deckgo-slide-content class="slide__vyconsulting">
+              <h1 slot="title">Demo Time</h1>
+              <div slot="content">
+                <h1
+                  class="h1__title-vyconsulting ion-text-center"
+                  style="font-weight: bold; color: var(--ion-color-light)"
+                >
+                  Demo Time
+                </h1>
+              </div>
+            </deckgo-slide-content>
+
+            <deckgo-slide-content class="slide__vyconsulting">
+              <h1 slot="title">Warnings</h1>
+              <div slot="content">
+                <h1
+                  class="h1__title-vyconsulting ion-text-center"
+                  style="font-weight: bold; color: var(--ion-color-light)"
+                >
+                  Warnings
+                </h1>
+              </div>
+            </deckgo-slide-content>
+
+            <deckgo-slide-content>
+              <h1 slot="title">Warnings</h1>
+              <div slot="content">
+                <h2 class="h2__whoami">Warnings</h2>
+                <h3 class="h3__post" style="margin-top: -2%">
+                  Why you should use production mode ?
+                </h3>
+                <ion-grid fixed style="margin-top: 0%">
+                  <ion-row style="width: 84%">
+                    <ion-col size="12">
+                      <img
+                        style="width: 40%"
+                        src="./assets/img/simon_cooment.png"
+                        alt=""
+                      />
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </div>
+            </deckgo-slide-content>
+
+            <deckgo-slide-content class="slide__vyconsulting">
+              <h1 slot="title">Features</h1>
+              <div slot="content">
+                <h1
+                  class="h1__title-vyconsulting ion-text-center"
+                  style="font-weight: bold; color: var(--ion-color-light)"
+                >
+                  Features
+                </h1>
+              </div>
+            </deckgo-slide-content>
+
+            <deckgo-slide-content>
+              <h1 slot="title">Features</h1>
+              <div slot="content">
+                <h2 class="h2__whoami">3D Secure</h2>
+                <h3 class="h3__post" style="margin-top: -2%">
+                  ✅ Mandatory in Europe from December 31st
+                </h3>
+                <h3 class="h3__post" style="margin-top: -2%">
+                  ✅ More security for payment
+                </h3>
+              </div>
+            </deckgo-slide-content>
+
+            <deckgo-slide-content>
+              <h1 slot="title">Features</h1>
+              <div slot="content">
+                <h2 class="h2__whoami">Methods of Stripe SDK for JS</h2>
+                <h3 class="h3__post" style="margin-top: -2%">
+                  ✅ Add all methods possible of Stripe SDK for JS
+                </h3>
+              </div>
+            </deckgo-slide-content>
+
+            <deckgo-slide-content>
+              <h1 slot="title">Features</h1>
+              <div slot="content">
+                <h2 class="h2__whoami">Better documentation</h2>
+                <h3 class="h3__post" style="margin-top: -2%">
+                  ✅ Create a website for documentation
+                </h3>
+                <h3 class="h3__post" style="margin-top: -2%">
+                  ✅ Add many examples for backend implementation
+                </h3>
+                <h3 class="h3__post" style="margin-top: -2%">
+                  ✅ Multi-languages of website: English and French
+                </h3>
+              </div>
+            </deckgo-slide-content>
+
+            <deckgo-slide-content class="slide__vyconsulting">
+              <h1 slot="title">Questions</h1>
+              <div slot="content">
+                <h1
+                  class="h1__title-vyconsulting ion-text-center"
+                  style="font-weight: bold; color: var(--ion-color-light); margin-top: -28%;"
+                >
+                  <span style="font-size: x-large">< /presentation> </span
+                  ><br /><br />
+                  Questions ?
+                </h1>
+              </div>
+            </deckgo-slide-content>
+
+            <!-- END: Edit your slides -->
+          </deckgo-deck>
+
+          <deckgo-remote></deckgo-remote>
+
+          <button id="previous" class="navigation ion-activatable">
+            <ion-ripple-effect></ion-ripple-effect>
+            <ion-icon
+              name="chevron-back-outline"
+              aria-label="Previous slide"
+            ></ion-icon>
+          </button>
+
+          <button id="next" class="navigation ion-activatable">
+            <ion-ripple-effect></ion-ripple-effect>
+            <ion-icon
+              name="chevron-forward-outline"
+              aria-label="Next slide"
+            ></ion-icon>
+          </button>
+        </ion-content>
+
+        <ion-fab vertical="top" horizontal="end" slot="fixed" id="navigation">
+          <button id="slidePicker" class="navigation ion-activatable">
+            <ion-ripple-effect></ion-ripple-effect>
+            <ion-icon
+              src="https://deckdeckgo.com/assets/icons/ionicons/md-list.svg"
+              aria-label="Jump to a particular slide"
+            ></ion-icon>
+          </button>
+
+          <button
+            id="fullScreen"
+            class="navigation ion-activatable hide-on-mobile"
+          >
+            <ion-ripple-effect></ion-ripple-effect>
+            <ion-icon
+              name="contract-outline"
+              aria-label="Exit full screen"
+            ></ion-icon>
+          </button>
+
+          <button id="remote" class="navigation ion-activatable">
+            <ion-ripple-effect></ion-ripple-effect>
+            <ion-icon
+              name="phone-portrait-outline"
+              aria-label="Open Remote"
+            ></ion-icon>
+          </button>
+        </ion-fab>
+
+        <web-social-share
+          show="false"
+          style="--web-social-share-backdrop-opacity: 0.5"
+        >
+          <ion-icon
+            name="logo-twitter"
+            aria-label="Twitter"
+            slot="twitter"
+            style="color: #00aced; font-size: 1.6rem; display: block"
+          ></ion-icon>
+          <ion-icon
+            name="logo-reddit"
+            aria-label="Reddit"
+            slot="reddit"
+            style="font-size: 1.6rem; display: block"
+          ></ion-icon>
+          <ion-icon
+            name="logo-linkedin"
+            aria-label="Linkedin"
+            slot="linkedin"
+            style="color: #0077b5; font-size: 1.6rem; display: block"
+          ></ion-icon>
+          <ion-icon
+            name="mail"
+            slot="email"
+            aria-label="Email"
+            style="color: #ff8ea3; font-size: 1.6rem; display: block"
+          ></ion-icon>
+          <ion-icon
+            name="logo-whatsapp"
+            aria-label="WhatsApp"
+            slot="whatsapp"
+            style="color: #25d366; font-size: 1.6rem; display: block"
+          ></ion-icon>
+          <ion-icon
+            name="logo-hackernews"
+            aria-label="Hacker News"
+            slot="hackernews"
+            style="color: #ff6000; font-size: 1.6rem; display: block"
+          ></ion-icon>
+        </web-social-share>
+      </div>
+    </ion-app>
+
+    <noscript> Please enable Javascript to access this presentation. </noscript>
+  </body>
+</html>
